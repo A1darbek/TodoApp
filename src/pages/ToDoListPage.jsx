@@ -19,7 +19,7 @@ const ToDoListPage = () => {
 
     const fetchTasks = async () => {
         try {
-            const res = await fetch('/api/tasks', {
+            const res = await fetch('${import.meta.env.VITE_BACKEND_URL}/api/tasks', {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${user.token}`,
@@ -41,7 +41,7 @@ const ToDoListPage = () => {
 
     const handleDelete = async (taskId) => {
         try {
-            const res = await fetch(`/api/tasks/${taskId}`, {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/tasks/${taskId}`, {
                 method: 'DELETE',
                 headers: { Authorization: `Bearer ${user.token}` },
             });

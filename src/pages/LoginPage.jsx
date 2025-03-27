@@ -15,7 +15,7 @@ const LoginPage = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/login', {
+            const res = await fetch('${import.meta.env.VITE_BACKEND_URL}/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
@@ -35,7 +35,7 @@ const LoginPage = () => {
 
     const handleGoogleLoginSuccess = async (credentialResponse) => {
         try {
-            const res = await fetch('/api/google-login', {
+            const res = await fetch('${import.meta.env.VITE_BACKEND_URL}/api/google-login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ credential: credentialResponse.credential }),

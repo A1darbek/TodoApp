@@ -1,4 +1,3 @@
-// components/TaskForm.jsx
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 import {
@@ -26,7 +25,7 @@ const TaskForm = ({ onTaskCreated, editingTask, onEditComplete }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const method = editingTask ? 'PUT' : 'POST';
-        const url = editingTask ? `/api/tasks/${editingTask._id}` : '/api/tasks';
+        const url = editingTask ? `${import.meta.env.VITE_BACKEND_URL}/api/tasks/${editingTask._id}` : '${import.meta.env.VITE_BACKEND_URL}/api/tasks';
 
         try {
             const res = await fetch(url, {
