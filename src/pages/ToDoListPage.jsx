@@ -19,7 +19,7 @@ const ToDoListPage = () => {
 
     const fetchTasks = async () => {
         try {
-            const res = await fetch('${import.meta.env.VITE_BACKEND_URL}/api/tasks', {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/tasks`, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${user.token}`,
