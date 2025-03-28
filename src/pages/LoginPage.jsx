@@ -37,6 +37,7 @@ const LoginPage = () => {
         try {
             const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/google-login`, {
                 method: 'POST',
+                credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ credential: credentialResponse.credential }),
             });
